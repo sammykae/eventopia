@@ -53,7 +53,11 @@ export default function LoginModal() {
 
 	return (
 		<>
-			<Link className={classes.menuButton} underline="none">
+			<Link
+				className={classes.menuButton}
+				onClick={handleOpen}
+				underline="none"
+			>
 				Log In
 			</Link>
 			<Modal

@@ -99,7 +99,7 @@ const useStyles = makeStyles((theme) => ({
 		fontFamily: theme.typography.special,
 		width: "100%",
 		padding: theme.spacing(1.5),
-		fontSize: theme.typography.fontSize * 2,
+		fontSize: theme.typography.fontSize,
 	},
 }));
 

@@ -204,7 +204,11 @@ export default function ListingCard({ listing }) {
 					</IconButton>
 				</Box>
 				<Typography variant="h4" component="h3" className={classes.title}>
-					<Link className={classes.titlelink} href={`/listings/${listing.id}`}>
+					<Link
+						underline="none"
+						className={classes.titlelink}
+						href={`/listings/${listing.id}`}
+					>
 						{listing.title}
 					</Link>
 				</Typography>
@@ -253,6 +257,7 @@ export default function ListingCard({ listing }) {
 						/>
 						Listing by{" "}
 						<Link
+							underline="none"
 							href={`/users/${listing.owner.username}`}
 							style={{ marginLeft: 5 }}
 						>
@@ -265,10 +270,8 @@ export default function ListingCard({ listing }) {
 							className={classes.contactButton}
 						/>
 					) : (
-						<Link href={`/listings/${listing.id}/edit`}>
-							<Button href={`/listings/${listing.id}/edit`}>
-								Edit Listing
-							</Button>
+						<Link href={`/listings/${listing.id}/edit`} underline="none">
+							<Button href={`/listings/${listing.id}/edit`}>Update</Button>
 						</Link>
 					)}
 					{/* {<ContactModal username={listing.owner.username} />} */}

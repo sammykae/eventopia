@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 		[theme.breakpoints.down("xs")]: {
 			gridTemplateColumns: "1fr",
+			columnGap: 0,
 		},
 	},
 }));
