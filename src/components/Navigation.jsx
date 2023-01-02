@@ -32,6 +32,11 @@ const useStyles = makeStyles((theme) => ({
 	appBar: {
 		background: "transparent",
 		height: "80px",
+		[theme.breakpoints.down("xs")]: {
+			display: "flex",
+			width: "100vw",
+			justifyContent: "space-between",
+		},
 	},
 	menuButton: {
 		marginRight: theme.spacing(2),
@@ -53,6 +58,9 @@ const useStyles = makeStyles((theme) => ({
 		flexGrow: 3,
 		fontFamily: theme.typography.special,
 		color: theme.palette.primary.main,
+		[theme.breakpoints.down("xs")]: {
+			display: "none",
+		},
 	},
 	rightNav: {
 		flexGrow: 0.3,
@@ -60,6 +68,11 @@ const useStyles = makeStyles((theme) => ({
 		flexDirection: "row",
 		alignItems: "center",
 		justifyContent: "space-between",
+		[theme.breakpoints.down("xs")]: {
+			justifyContent: "normal",
+			flexGrow: 0,
+			columnGap: "20px",
+		},
 	},
 	profileMenu: {
 		fontSize: "1.5rem",

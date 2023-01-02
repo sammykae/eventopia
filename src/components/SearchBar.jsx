@@ -28,8 +28,9 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: "rgba(255,255,255,.7)",
 		[theme.breakpoints.down("sm")]: {
 			backgroundColor: "rgba(255,255,255,.7)",
-			width: "80vw",
+			width: "85vw",
 			paddingBottom: theme.spacing(5),
+			margin: "auto",
 		},
 	},
 	title: {
