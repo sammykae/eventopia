@@ -92,9 +92,9 @@ const useStyles = makeStyles((theme) => ({
 	hero: {
 		width: "50vw",
 		margin: "auto",
-		fontFamily: theme.typography.special,
+		// fontFamily: theme.typography.special,
 		// color: theme.palette.primary.main,
-		color: " #d334ff",
+		color: " #ffffff",
 		// [theme.breakpoints.down("md")]: {
 		// 	paddingTop: theme.spacing(20),
 		// },
@@ -104,8 +104,12 @@ const useStyles = makeStyles((theme) => ({
 	},
 
 	heroText: {
-		fontSize: 20,
-		padding: theme.spacing(1.5),
+		fontSize: 60,
+		fontWeight: "bold",
+	},
+	heroText2: {
+		fontSize: 30,
+		fontWeight: "bold",
 	},
 	button: {
 		margin: "20px 0",
@@ -249,22 +253,23 @@ const SearchBar = ({ setSearchResults }) => {
 
 			{browserLocation.pathname === "/" && (
 				<Box className={classes.hero}>
-					<Box className={classes.heroText}>
+					<Box>
 						<Typography
 							variant="h3"
-							component="p"
+							component="h3"
 							style={{ fontFamily: "inherit", margin: "20px 0" }}
+							className={classes.heroText}
 						>
 							Eventopia
 						</Typography>
 
-						<p>
+						<p className={classes.heroText2}>
 							Making event planning easier, more affordable and more
 							enjoyable!!!
 						</p>
 						<Button
 							variant="contained"
-							color="primary"
+							color="white"
 							size="large"
 							href="/search"
 							className={classes.button}
