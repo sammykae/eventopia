@@ -85,7 +85,7 @@ function SingleLineGridList({ imgs, listingTitle }) {
 			</GridList>
 			<Modal
 				open={open}
-				onClose={handleClose}
+				// onClose={handleClose}
 				aria-labelledby="simple-modal-title"
 				aria-describedby="simple-modal-description"
 				TransitionComponent={Fade}

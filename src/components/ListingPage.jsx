@@ -239,8 +239,8 @@ export default function ListingPage() {
 									</div>
 								</>
 							)}
-							<Divider className={classes.sectionDivider} />
-							<div>
+
+							<div className={classes.spacing}>
 								<Typography
 									component="h2"
 									variant="h5"

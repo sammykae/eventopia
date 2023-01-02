@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
 		backgroundSize: "cover",
 		// backgroundRepeat: "no-repeat",
 		// backgroundColor: "pink",
-		cursor: "pointer",
+		// cursor: "pointer",
 	},
 	modalFrame: {
 		display: "inline-block",
@@ -39,7 +39,7 @@ export default function ImageModal({ src, alt, component, className }) {
 			<div
 				className={className ? `${classes.img} ${className}` : classes.img}
 				style={{ backgroundImage: `url(${src})` }}
-				onClick={handleOpen}
+				// onClick={handleOpen}
 			></div>
 
 			<Modal
