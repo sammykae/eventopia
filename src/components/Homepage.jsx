@@ -5,16 +5,15 @@ import Hero from "./Hero";
 import ForUsers from "./ForUsers";
 import SearchBar from "./SearchBar";
 import MainContentWrapper from "./MainContentWrapper";
-
+import Cards from "../components/Cards";
+import { live, discover } from "../utils/data";
+import { Box } from "@material-ui/core";
+import Explore from "./Explore";
+import Hosting from "./Hosting";
+import Banner from "./Banner";
 const useStyles = makeStyles((theme) => ({
-	searchWrapper: {
-		zIndex: 1,
-		width: "100%",
-		display: "flex",
-		alignItems: "center",
-		justifyContent: "center",
-		left: "50%",
-		top: "50%",
+	sectionWrapper: {
+		margin: "40px 0",
 	},
 }));
 
@@ -26,7 +25,23 @@ const Homepage = () => {
 			<div className="hero">
 				<SearchBar />
 			</div>
-			{/* <Hero /> */}
+			<div className={"cardWrapper"}>
+				<Box className={classes.sectionWrapper}>
+					<Explore />
+				</Box>
+				<Box className={classes.sectionWrapper}>
+					<Banner />
+				</Box>
+				<Box className={classes.sectionWrapper}>
+					<Cards {...live} live={true} />
+				</Box>
+				<Box className={classes.sectionWrapper}>
+					<Cards {...discover} live={false} />
+				</Box>
+				<Box className={classes.sectionWrapper}>
+					<Hosting {...discover} live={false} />
+				</Box>
+			</div>
 			{/* <MainContentWrapper>
 				<ForUsers />
 			</MainContentWrapper> */}

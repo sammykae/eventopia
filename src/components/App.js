@@ -22,7 +22,7 @@ import {
 	DatePicker,
 } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
-import "../App.css";
+import "../App.scss";
 
 function App() {
 	return (

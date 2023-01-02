@@ -32,14 +32,16 @@ const useStyles = makeStyles((theme) => ({
 		// borderBottom: "2px solid red",
 	},
 	auto: {
-		width: "80%",
+		width: "70%",
 		marginRight: -25,
-
+		[theme.breakpoints.down("lg")]: {
+			width: "70%",
+		},
 		[theme.breakpoints.down("sm")]: {
 			width: "70%",
 		},
 		[theme.breakpoints.down("xs")]: {
-			width: "50%",
+			width: "52%",
 		},
 	},
 }));
@@ -129,6 +131,7 @@ export default function GoogleMapsAutoComplete({
 			filterOptions={(x) => x}
 			options={options}
 			autoComplete
+			color="white"
 			// disableClearable
 			className={classes.auto}
 			freeSolo
@@ -150,13 +153,18 @@ export default function GoogleMapsAutoComplete({
 			renderInput={(params) => (
 				<TextField
 					{...params}
-					label={label || "Search locations"}
+					label={label || "Location"}
 					variant={variant || "standard"}
-					color="primary"
+					color="white"
+					inputLabelProps={{
+						style: {
+							color: "#ffffff",
+						},
+					}}
 					// fullWidth
 					defaultValue={inputValue}
 					helperText={helperText}
-					required={required}
+					// required={required}
 					className={classes.textfield}
 				/>
 			)}

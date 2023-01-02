@@ -99,7 +99,7 @@ export default function MenuAppBar() {
 		window.addEventListener("scroll", setScroll);
 
 		if (scrolled) {
-			headRef.current.style.background = "#1DE9B6";
+			headRef.current.style.background = "#ffffff";
 		} else {
 			headRef.current.style.background = "transparent";
 		}

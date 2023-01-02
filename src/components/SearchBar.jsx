@@ -23,13 +23,17 @@ import getLocation from "../utils/getGeographicLocation";
 const useStyles = makeStyles((theme) => ({
 	root: {
 		marginBottom: theme.spacing(1),
-		padding: theme.spacing(2),
-		width: "50vw",
-		backgroundColor: "rgba(255,255,255,.7)",
+		padding: theme.spacing(0.5),
+		width: "40vw",
+		borderRadius: 300,
+		[theme.breakpoints.down("lg")]: {
+			width: "50vw",
+		},
+		backgroundColor: "#2e2e48",
 		[theme.breakpoints.down("sm")]: {
-			backgroundColor: "rgba(255,255,255,.7)",
+			// backgroundColor: "rgba(255,255,255,.7)",
 			width: "85vw",
-			paddingBottom: theme.spacing(5),
+			// paddingBottom: theme.spacing(5),
 			margin: "auto",
 		},
 	},
@@ -37,6 +41,10 @@ const useStyles = makeStyles((theme) => ({
 		fontFamily: theme.typography.special,
 		color: " #d334ff",
 		paddingBottom: theme.spacing(1.5),
+		[theme.breakpoints.down("xs")]: {
+			paddingLeft: 10,
+			paddingRight: 10,
+		},
 	},
 	form: {
 		display: "flex",
@@ -63,8 +71,9 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: "center",
 		alignItems: "center",
 		zIndex: 2,
-		marginTop: 5,
+		marginTop: 8,
 		borderRadius: 300,
+		width: "100px",
 		padding: 5,
 		backgroundColor: theme.palette.primary.main,
 		color: "#ffffff",
@@ -73,9 +82,14 @@ const useStyles = makeStyles((theme) => ({
 	},
 	searchIcon: {
 		fontSize: 30,
+		marginTop: 5,
+		color: "#ffffff",
 	},
 	demoSearch: {
 		marginTop: theme.spacing(2),
+		[theme.breakpoints.down("xs")]: {
+			padding: 5,
+		},
 	},
 	link: {
 		color: " #d334ff",
@@ -201,7 +215,7 @@ const SearchBar = ({ setSearchResults }) => {
 					Find Your Next Event-Room
 				</Typography>
 				<Paper className={classes.root}>
-					<form className={classes.form} onSubmit={search}>
+					<form className={`${classes.form} search_form`} onSubmit={search}>
 						{/* <div className={classes.formElementWrapper}> */}
 						{processingLocation ? (
 							<CircularProgress size={20} />
