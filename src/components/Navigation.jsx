@@ -107,8 +107,10 @@ export default function MenuAppBar() {
 
 		if (scrolled) {
 			headRef.current.style.background = "#2e2e48";
+			headRef.current.style.borderBottom = "1px solid #000000";
 		} else {
 			headRef.current.style.background = "transparent";
+			headRef.current.style.borderBottom = "none";
 		}
 
 		return () => {

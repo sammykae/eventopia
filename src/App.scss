@@ -58,15 +58,16 @@ body::-webkit-scrollbar-thumb {
 		top: 80px;
 		border: none;
 		border-bottom: 1px solid #000000;
-		border-radius: 0 !important;
 		width: 100vw !important;
+		border-radius: 0 !important;
 		transform: translate(-50%, 0);
 	}
 }
 .outside {
-	padding: 5px;
+	border-radius: 0;
+	padding: 0 5px;
 	width: 40vw;
-	border-radius: 300px !important;
+	border-radius: 100px;
 	z-index: 20;
 	background-color: #2e2e48 !important;
 
@@ -77,11 +78,16 @@ body::-webkit-scrollbar-thumb {
 		width: 85vw;
 		margin: auto;
 	}
+	@media (max-width: 730px) {
+		width: 85vw;
+		margin: auto;
+	}
 }
 .normal {
+	padding: 5px;
 	animation-name: seamout !important;
 	animation-duration: 0.5s;
-	@media (max-width: 1600px) {
+	@media (max-width: 730px) {
 		animation-name: seamout2 !important;
 		animation-duration: 0.5s;
 	}
@@ -90,7 +96,7 @@ body::-webkit-scrollbar-thumb {
 	0% {
 		top: 100px;
 		width: 40vw;
-		transform: translate(-40%, 0);
+		transform: translate(-50%, 10%);
 	}
 
 	100% {
@@ -100,15 +106,16 @@ body::-webkit-scrollbar-thumb {
 
 @keyframes seamout {
 	0% {
-		transform: translate(-30%, -60%);
+		transform: translate(-10%, -60%);
 	}
 	100% {
 		transform: translate(0, 0);
 	}
 }
+
 @keyframes seamout2 {
 	0% {
-		transform: translate(-70%, -60%);
+		transform: translate(0, -60%);
 	}
 	100% {
 		transform: translate(0, 0);

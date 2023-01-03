@@ -241,7 +241,7 @@ const SearchBar = ({ setSearchResults }) => {
 				<Typography variant="h5" component="h3" className={classes.title}>
 					Find Your Next Event-Room
 				</Typography>
-				<Paper ref={searchRef} className="outside">
+				<div ref={searchRef} className="outside">
 					<form className={`${classes.form} search_form`} onSubmit={search}>
 						{/* <div className={classes.formElementWrapper}> */}
 						{processingLocation ? (
@@ -281,7 +281,7 @@ const SearchBar = ({ setSearchResults }) => {
 						</button>
 						{/* </div> */}
 					</form>
-				</Paper>
+				</div>
 				{browserLocation.pathname === "/" && (
 					<Typography align="center" className={classes.demoSearch}>
 						Don't know where to start? Try&nbsp;
