@@ -26,21 +26,23 @@ const Homepage = () => {
 				<SearchBar />
 			</div>
 			<div className={"cardWrapper"}>
-				<Box className={classes.sectionWrapper}>
-					<Explore />
-				</Box>
-				<Box className={classes.sectionWrapper}>
-					<Banner />
-				</Box>
-				<Box className={classes.sectionWrapper}>
-					<Cards {...live} live={true} />
-				</Box>
-				<Box className={classes.sectionWrapper}>
-					<Cards {...discover} live={false} />
-				</Box>
-				<Box className={classes.sectionWrapper}>
-					<Hosting {...discover} live={false} />
-				</Box>
+				<div className={"cardWrapperInner"}>
+					<Box className={classes.sectionWrapper}>
+						<Explore />
+					</Box>
+					<Box className={classes.sectionWrapper}>
+						<Banner />
+					</Box>
+					<Box className={classes.sectionWrapper}>
+						<Cards {...live} live={true} />
+					</Box>
+					<Box className={classes.sectionWrapper}>
+						<Cards {...discover} live={false} />
+					</Box>
+					<Box className={classes.sectionWrapper}>
+						<Hosting {...discover} live={false} />
+					</Box>
+				</div>
 			</div>
 			{/* <MainContentWrapper>
 				<ForUsers />

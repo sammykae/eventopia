@@ -19,6 +19,7 @@ import hometypes from "../searchtypes.json";
 import format from "date-fns/format";
 import { Redirect, useLocation, useHistory } from "react-router-dom";
 import getLocation from "../utils/getGeographicLocation";
+import { useRef } from "react";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -26,14 +27,13 @@ const useStyles = makeStyles((theme) => ({
 		padding: theme.spacing(0.5),
 		width: "40vw",
 		borderRadius: 300,
+		zIndex: 20,
 		[theme.breakpoints.down("lg")]: {
 			width: "50vw",
 		},
 		backgroundColor: "#2e2e48",
 		[theme.breakpoints.down("sm")]: {
-			// backgroundColor: "rgba(255,255,255,.7)",
 			width: "85vw",
-			// paddingBottom: theme.spacing(5),
 			margin: "auto",
 		},
 	},
@@ -135,6 +135,7 @@ const demoSearch =
 	"/search?lat=48.856614&lng=2.3522219&query=Paris,%20France&startDate=&homeType=";
 
 const SearchBar = ({ setSearchResults }) => {
+	const searchRef = useRef(null);
 	const classes = useStyles();
 	const browserLocation = useLocation();
 	const history = useHistory();
@@ -142,6 +143,30 @@ const SearchBar = ({ setSearchResults }) => {
 	const [homeType, setHomeType] = useState("");
 	const [startDate, setStartDate] = useState("");
 	const [processingLocation, setProcessingLocation] = useState(false);
+	const [scrolled, setScrolled] = useState(false);
+	const setScroll = () => {
+		const offset = window.scrollY;
+
+		if (offset > 70) {
+			setScrolled(true);
+		} else {
+			setScrolled(false);
+		}
+	};
+
+	useEffect(() => {
+		window.addEventListener("scroll", setScroll);
+
+		if (scrolled) {
+			searchRef.current.classList.add("sticky");
+		} else {
+			searchRef.current.classList.remove("sticky");
+		}
+
+		return () => {
+			window.removeEventListener("scroll", setScroll);
+		};
+	}, [scrolled]);
 
 	const queryLocation = (lat, lng, description, startDate, homeType) => {
 		history.push(
@@ -214,7 +239,7 @@ const SearchBar = ({ setSearchResults }) => {
 				<Typography variant="h5" component="h3" className={classes.title}>
 					Find Your Next Event-Room
 				</Typography>
-				<Paper className={classes.root}>
+				<Paper ref={searchRef} className={classes.root}>
 					<form className={`${classes.form} search_form`} onSubmit={search}>
 						{/* <div className={classes.formElementWrapper}> */}
 						{processingLocation ? (
