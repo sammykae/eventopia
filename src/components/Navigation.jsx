@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	appBar: {
 		background: "transparent",
+		// position: "relative",
 		height: "80px",
 		[theme.breakpoints.down("md")]: {
 			display: "flex",
@@ -105,7 +106,7 @@ export default function MenuAppBar() {
 		window.addEventListener("scroll", setScroll);
 
 		if (scrolled) {
-			headRef.current.style.background = "#ffffff";
+			headRef.current.style.background = "#2e2e48";
 		} else {
 			headRef.current.style.background = "transparent";
 		}

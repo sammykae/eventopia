@@ -48,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	mainProfileContent: {
+		color: "#ffffff",
 		padding: theme.spacing(2),
 		paddingLeft: theme.spacing(4),
 		display: "flex",
@@ -65,6 +66,7 @@ const useStyles = makeStyles((theme) => ({
 		margin: theme.spacing(10),
 	},
 	primaryInfoWrapper: {
+		color: "#ffffff",
 		display: "flex",
 		justifyContent: "space-between",
 		width: "100%",
@@ -85,6 +87,7 @@ const useStyles = makeStyles((theme) => ({
 		fontWeight: "bold",
 	},
 	secondaryInfo: {
+		color: "#ffffff",
 		paddingBottom: theme.spacing(2),
 		fontSize: "1.25rem",
 	},

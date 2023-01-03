@@ -22,21 +22,24 @@ import getLocation from "../utils/getGeographicLocation";
 import { useRef } from "react";
 
 const useStyles = makeStyles((theme) => ({
-	root: {
-		marginBottom: theme.spacing(1),
-		padding: theme.spacing(0.5),
-		width: "40vw",
-		borderRadius: 300,
-		zIndex: 20,
-		[theme.breakpoints.down("lg")]: {
-			width: "50vw",
-		},
-		backgroundColor: "#2e2e48",
-		[theme.breakpoints.down("sm")]: {
-			width: "85vw",
-			margin: "auto",
-		},
-	},
+	// root: {
+	// 	marginBottom: theme.spacing(1),
+	// 	padding: theme.spacing(0.5),
+	// 	width: "40vw",
+	// 	borderRadius: 300,
+	// 	zIndex: 20,
+	// 	// animationName: "seamout",
+	// 	// animationDirection: ".3s",
+	// 	[theme.breakpoints.down("lg")]: {
+	// 		width: "50vw",
+	// 	},
+	// 	backgroundColor: "#2e2e48",
+	// 	[theme.breakpoints.down("sm")]: {
+	// 		width: "85vw",
+	// 		margin: "auto",
+	// 	},
+	// },
+
 	title: {
 		fontFamily: theme.typography.special,
 		color: " #d334ff",
@@ -106,12 +109,7 @@ const useStyles = makeStyles((theme) => ({
 	hero: {
 		width: "50vw",
 		margin: "auto",
-		// fontFamily: theme.typography.special,
-		// color: theme.palette.primary.main,
 		color: " #ffffff",
-		// [theme.breakpoints.down("md")]: {
-		// 	paddingTop: theme.spacing(20),
-		// },
 		[theme.breakpoints.down("sm")]: {
 			width: "80vw",
 		},
@@ -159,8 +157,10 @@ const SearchBar = ({ setSearchResults }) => {
 
 		if (scrolled) {
 			searchRef.current.classList.add("sticky");
+			searchRef.current.classList.remove("outside");
 		} else {
 			searchRef.current.classList.remove("sticky");
+			searchRef.current.classList.add("outside");
 		}
 
 		return () => {
@@ -239,7 +239,7 @@ const SearchBar = ({ setSearchResults }) => {
 				<Typography variant="h5" component="h3" className={classes.title}>
 					Find Your Next Event-Room
 				</Typography>
-				<Paper ref={searchRef} className={classes.root}>
+				<Paper ref={searchRef}>
 					<form className={`${classes.form} search_form`} onSubmit={search}>
 						{/* <div className={classes.formElementWrapper}> */}
 						{processingLocation ? (
