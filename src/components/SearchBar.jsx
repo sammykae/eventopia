@@ -157,10 +157,12 @@ const SearchBar = ({ setSearchResults }) => {
 
 		if (scrolled) {
 			searchRef.current.classList.add("sticky");
-			searchRef.current.classList.remove("outside");
+			searchRef.current.classList.remove("normal");
 		} else {
+			if (searchRef.current.classList.contains("sticky")) {
+				searchRef.current.classList.add("normal");
+			}
 			searchRef.current.classList.remove("sticky");
-			searchRef.current.classList.add("outside");
 		}
 
 		return () => {
@@ -239,7 +241,7 @@ const SearchBar = ({ setSearchResults }) => {
 				<Typography variant="h5" component="h3" className={classes.title}>
 					Find Your Next Event-Room
 				</Typography>
-				<Paper ref={searchRef}>
+				<Paper ref={searchRef} className="outside">
 					<form className={`${classes.form} search_form`} onSubmit={search}>
 						{/* <div className={classes.formElementWrapper}> */}
 						{processingLocation ? (
